@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Home</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Stock Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.10.0/dist/tf.min.js"></script>
 </head>
 <body>
-  <h1>Welcome to My Website</h1>
-  <a href="register.html">Register</a>
-  <a href="login.html">Login</a>
+  <h1>Stock Management Dashboard</h1>
+  <button onclick="logout()">Logout</button>
+
+  <section>
+    <h2>Add Product</h2>
+    <input type="text" id="productName" placeholder="Product Name">
+    <input type="number" id="productPrice" placeholder="Price">
+    <input type="number" id="productQty" placeholder="Quantity">
+    <input type="text" id="productCategory" placeholder="Category">
+    <button onclick="addProduct()">Add Product</button>
+  </section>
+
+  <section>
+    <h2>Products</h2>
+    <input type="text" id="searchProduct" placeholder="Search" oninput="renderProducts()">
+    <table id="productTable">
+      <thead>
+        <tr>
+          <th>ID</th><th>Name</th><th>Price</th><th>Qty</th><th>Category</th><th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>AI Prediction</h2>
+    <button onclick="window.location.href='ai.html'">Go to AI Forecast</button>
+  </section>
+
+  <script src="js/auth.js"></script>
+  <script src="js/stock.js"></script>
 </body>
 </html>
